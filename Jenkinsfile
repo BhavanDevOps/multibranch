@@ -13,7 +13,7 @@ pipeline {
                 echo "This stage 2 - master"
             }
         }
-        stage ("Stage - 3") {
+        stage ("Stage- 3") {
             steps {
                 echo "This stage 3 - master"
             }
