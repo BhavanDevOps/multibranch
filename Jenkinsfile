@@ -1,29 +1,22 @@
-## Simple pipeline
-pipeline { 
-  
-   agent any
+pipeline {
+    agent any
 
-   stages {
-   
-     stage('Checkout the data') { 
-        steps { 
-           echo "Checkout the data" 
+    stages {
+        stage('Stage - 1') {
+            steps {
+                echo 'This is stage one -stage..'
+                
+            }
         }
-     }
-     
-     stage('create data') { 
-        steps { 
-           mkdir /tmp/appdata
+        stage ("Stage - 2") {
+            steps {
+                echo "This stage 2 - stage"
+            }
         }
-      }
-
-         stage("deploy apps files") { 
-         steps { 
-           cp -r . /tmp/appdata
-         }
-
-     }
-  
-   	}
-
-   }
+        stage ("Stage - 3") {
+            steps {
+                echo "This stage 3 - stage"
+            }
+        }
+    }
+}
