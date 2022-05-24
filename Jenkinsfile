@@ -1,24 +1,25 @@
+## Simple pipeline
 pipeline { 
   
    agent any
 
    stages {
    
-     stage('Install Dependencies') { 
+     stage('Checkout the data') { 
         steps { 
-           sh 'npm install' 
+           echo "Checkout the data" 
         }
      }
      
-     stage('Test') { 
+     stage('create data') { 
         steps { 
-           sh 'echo "testing application..."'
+           mkdir /tmp/appdata
         }
       }
 
-         stage("Deploy application") { 
+         stage("deploy apps files") { 
          steps { 
-           sh 'echo "deploying application..."'
+           cp -r . /tmp/appdata
          }
 
      }
